@@ -7,4 +7,8 @@ const account = "0x38Df7aC4F3a0C50B31FDEc13e9B443356418Ec9A";
 web3.eth.getBalance(account)
     .then((bal) => {
         console.log(`So the ${account} remainder is... ${bal}.`);
+        return web3.utils.fromWei(bal, "ether");
     })
+    .then((eth) => {
+        console.log(`For ETH is... ${eth}.`)
+    });
